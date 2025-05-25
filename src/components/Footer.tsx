@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, CheckCircle } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, CheckCircle, ArrowRight } from 'lucide-react';
 import logo from '../assets/logo1_upscayl_6x_realesrgan-x4plus.png';
 
 const Footer: React.FC = () => {
@@ -9,7 +9,6 @@ const Footer: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the newsletter subscription
     setIsSubscribed(true);
     setEmail('');
     setTimeout(() => setIsSubscribed(false), 3000);
@@ -24,10 +23,10 @@ const Footer: React.FC = () => {
               <img src={logo} alt="logo" className="h-12 rounded-lg object-contain mr-3" />
               <span className="font-bold text-xl text-white">Teso Works</span>
             </Link>
-            <p className="mb-6">Providing quality construction services and building materials across Zambia since 2013.</p>
+            <p className="mb-6">Building excellence in construction since 2013. Your trusted partner in quality construction services across Zambia.</p>
             <div className="flex space-x-4">
               <a 
-                href="https://facebook.com" 
+                href="https://facebook.com/tesoworks" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1"
@@ -35,7 +34,7 @@ const Footer: React.FC = () => {
                 <Facebook size={20} className="text-white" />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://twitter.com/tesoworks" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1"
@@ -43,7 +42,7 @@ const Footer: React.FC = () => {
                 <Twitter size={20} className="text-white" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/company/tesoworks" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1"
@@ -51,7 +50,7 @@ const Footer: React.FC = () => {
                 <Linkedin size={20} className="text-white" />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://instagram.com/tesoworks" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1"
@@ -65,40 +64,58 @@ const Footer: React.FC = () => {
             <h3 className="text-white text-lg font-bold mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">About Us</Link>
+                <Link to="/about" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Services</Link>
+                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  Services
+                </Link>
               </li>
               <li>
-                <Link to="/projects" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Projects</Link>
+                <Link to="/projects" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  Projects
+                </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Contact Us</Link>
+                <Link to="/contact" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <Link to="/commitment/sustainability" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Our Commitment</Link>
+                <Link to="/commitment/sustainability" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  Our Commitment
+                </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-white text-lg font-bold mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Services</h3>
+            <h3 className="text-white text-lg font-bold mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Construction</Link>
+                <Link to="/terms" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  Terms & Conditions
+                </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Consultancy</Link>
+                <Link to="/privacy" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Material Supply</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Renovation</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Architectural Design</Link>
+                <Link to="/faq" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all flex items-center">
+                  <ArrowRight size={16} className="mr-2" />
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
@@ -118,9 +135,10 @@ const Footer: React.FC = () => {
                 />
                 <button 
                   type="submit" 
-                  className="bg-secondary text-white px-6 hover:bg-secondary-dark transition-colors whitespace-nowrap"
+                  className="bg-secondary text-white px-6 hover:bg-secondary-dark transition-colors whitespace-nowrap flex items-center"
                 >
                   Subscribe
+                  <ArrowRight size={16} className="ml-2" />
                 </button>
               </div>
               {isSubscribed && (
@@ -134,7 +152,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-800 py-6 text-center text-sm">
-          <p>&copy; 2025 Teso Works & Supply Ltd. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Teso Works & Supply Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -4,16 +4,12 @@
 
 @layer base {
   :root {
-    /* Color Palette */
-    --color-primary: 15, 23, 42; /* #0F172A */
-    --color-primary-dark: 10, 15, 28; /* #0A0F1C */
-    --color-secondary: 194, 65, 12; /* #C2410C */
-    --color-secondary-dark: 155, 52, 11; /* #9B340B */
-    --color-accent: 254, 243, 199; /* #FEF3C7 */
-    --color-light: 248, 250, 252; /* #F8FAFC */
-    --color-success: 16, 185, 129; /* #10B981 */
-    --color-warning: 245, 158, 11; /* #F59E0B */
-    --color-error: 239, 68, 68; /* #EF4444 */
+    --color-primary: 26, 15, 53;
+    --color-primary-dark: 13, 7, 33;
+    --color-secondary: 196, 30, 58;
+    --color-secondary-dark: 160, 24, 48;
+    --color-accent: 255, 215, 0;
+    --color-accent-dark: 218, 165, 32;
   }
 
   html {
@@ -29,6 +25,18 @@
     @apply text-gray-900 font-bold leading-tight;
     font-family: 'Montserrat', sans-serif;
   }
+
+  img {
+    @apply transition-opacity duration-300;
+  }
+
+  img.lazy {
+    @apply opacity-0;
+  }
+
+  img.loaded {
+    @apply opacity-100;
+  }
 }
 
 @layer components {
@@ -38,15 +46,23 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:-translate-y-0.5;
   }
 
   .btn-primary {
-    @apply bg-secondary text-white hover:bg-secondary-dark;
+    @apply bg-secondary text-white hover:bg-secondary-dark shadow-md hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white;
+    @apply bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white shadow-md hover:shadow-lg;
+  }
+
+  .nav-link {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-secondary after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
 }
 
@@ -57,6 +73,10 @@
 
   .animate-fadeIn {
     animation: fadeIn 2s ease infinite;
+  }
+
+  .animate-flame {
+    animation: flame 3s ease-in-out infinite;
   }
 
   .animate-on-scroll {
@@ -101,4 +121,54 @@
   60% {
     transform: translateY(-5px);
   }
+}
+
+@keyframes flame {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(1deg);
+  }
+}
+
+/* Performance Optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary-dark);
+}
+
+/* Loading state styles */
+.loading {
+  @apply animate-pulse bg-gray-200;
+}
+
+/* Dragon theme specific styles */
+.dragon-scale {
+  background-image: linear-gradient(45deg, var(--color-primary) 25%, var(--color-primary-dark) 25%, var(--color-primary-dark) 50%, var(--color-primary) 50%, var(--color-primary) 75%, var(--color-primary-dark) 75%, var(--color-primary-dark));
+  background-size: 10px 10px;
+}
+
+.dragon-fire {
+  background: linear-gradient(45deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+  background-size: 200% 200%;
+  animation: flame 3s ease infinite;
 }
