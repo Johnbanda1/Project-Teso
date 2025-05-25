@@ -9,11 +9,13 @@ import ContactPage from './pages/ContactPage';
 import SustainabilityPage from './pages/commitment/SustainabilityPage';
 import SafetyPage from './pages/commitment/SafetyPage';
 import QualityPage from './pages/commitment/QualityPage';
+import ScrollToTop from './components/ScrollToTop';
 import './styles/globals.css';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
