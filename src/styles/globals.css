@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color Palette */
+    --color-primary: 15, 23, 42; /* #0F172A */
+    --color-primary-dark: 10, 15, 28; /* #0A0F1C */
+    --color-secondary: 194, 65, 12; /* #C2410C */
+    --color-secondary-dark: 155, 52, 11; /* #9B340B */
+    --color-accent: 254, 243, 199; /* #FEF3C7 */
+    --color-light: 248, 250, 252; /* #F8FAFC */
+    --color-success: 16, 185, 129; /* #10B981 */
+    --color-warning: 245, 158, 11; /* #F59E0B */
+    --color-error: 239, 68, 68; /* #EF4444 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-700 font-normal leading-relaxed;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 font-bold leading-tight;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto;
+    max-width: 1280px;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-white hover:bg-secondary-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white;
+  }
+}
+
+@layer utilities {
+  .animate-fadeUp {
+    animation: fadeUp 1s ease-out;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 2s ease infinite;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

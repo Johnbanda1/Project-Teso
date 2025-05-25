@@ -1,0 +1,104 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import logo from '../assets/logo1_upscayl_6x_realesrgan-x4plus.png';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-primary text-gray-300">
+      <div className="container mx-auto px-4 pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12">
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center mb-6">
+              <img src={logo} alt="logo" className="h-12 rounded-lg object-contain mr-3" />
+
+              <span className="font-bold text-xl text-white">Teso Works</span>
+            </Link>
+            <p className="mb-6">Providing quality construction services and building materials across Zambia since 2013.</p>
+            <div className="flex space-x-4">
+              <a href="#" className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                <Facebook size={20} className="text-white" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                <Twitter size={20} className="text-white" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                <Linkedin size={20} className="text-white" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-opacity-10 bg-white flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                <Instagram size={20} className="text-white" />
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-white text-lg font-bold mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">About Us</Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Services</Link>
+              </li>
+              <li>
+                <Link to="/projects" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Projects</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/commitment/sustainability" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Our Commitment</Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white text-lg font-bold mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Services</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Construction</Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Consultancy</Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Material Supply</Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Renovation</Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-secondary hover:pl-1 transition-all">Architectural Design</Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="lg:col-span-1">
+            <h3 className="text-white text-lg font-bold mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Newsletter</h3>
+            <p className="mb-4">Subscribe to our newsletter for updates and insights.</p>
+            <form className="flex overflow-hidden rounded">
+              <input 
+                type="email" 
+                placeholder="Your Email" 
+                className="flex-1 py-3 px-4 outline-none"
+                required
+              />
+              <button 
+                type="submit" 
+                className="bg-secondary text-white px-4 hover:bg-secondary-dark transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 py-6 text-center text-sm">
+          <p>&copy; 2025 Teso Works & Supply Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
