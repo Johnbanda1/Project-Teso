@@ -63,21 +63,49 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, det
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <ul className="space-y-2 mb-6">
+            <div className="bg-gray-50 p-4 rounded-lg mb-6">
+              <h4 className="font-semibold text-primary mb-3">Service Details:</h4>
+              <ul className="space-y-2">
               {details.map((detail, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-secondary mr-2">•</span>
+                    <span className="text-secondary mr-2 mt-1">✓</span>
                   <span className="text-gray-600">{detail}</span>
                 </li>
               ))}
-            </ul>
+              </ul>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <Link 
-        to={`/services#${title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
-        className="text-secondary font-semibold inline-block relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-secondary after:scale-x-0 after:origin-right after:transition-transform group-hover:after:scale-x-100 group-hover:after:origin-left"
+      <div className="flex gap-3">
+        <Link 
+          to="/services"
+          className="text-secondary font-semibold inline-flex items-center gap-2 hover:text-secondary-dark transition-colors"
+        >
+          View All Services
+          <motion.div whileHover={{ x: 3 }}>
+            →
+          </motion.div>
+        </Link>
+        
+        <Link 
+          to="/contact"
+          className="text-primary font-semibold inline-flex items-center gap-2 hover:text-primary-dark transition-colors"
+        >
+          Get Quote
+          <motion.div whileHover={{ x: 3 }}>
+            →
+          </motion.div>
+        </Link>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+    </motion.div>
+  );
+};
+
+export default ServiceCard;
       >
         View Service Details
       </Link>

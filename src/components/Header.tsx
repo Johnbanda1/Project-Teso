@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link as ScrollLink } from 'react-scroll';
 import logo from '../assets/logo1-removebg-preview_upscayl_10x_realesrgan-x4plus.png';
 
 interface HeaderProps {
@@ -104,53 +105,61 @@ useEffect(() => {
                 : 'hidden'
             } md:static md:bg-transparent md:flex-row md:pt-0 md:px-0 md:items-center transition-all duration-300`}
           >
-            <NavLink 
+            <ScrollLink 
               to="/" 
-              className={({ isActive }) => 
-                `block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 
-                ${isActive ? 'text-secondary after:w-full' : `${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0`} 
-                after:transition-all after:duration-300 hover:after:w-full`
-              }
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 cursor-pointer
+                ${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0
+                after:transition-all after:duration-300 hover:after:w-full`}
               onClick={closeMenu}
             >
               Home
-            </NavLink>
+            </ScrollLink>
             
-            <NavLink 
+            <ScrollLink 
               to="/about" 
-              className={({ isActive }) => 
-                `block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 
-                ${isActive ? 'text-secondary after:w-full' : `${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0`} 
-                after:transition-all after:duration-300 hover:after:w-full`
-              }
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 cursor-pointer
+                ${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0
+                after:transition-all after:duration-300 hover:after:w-full`}
               onClick={closeMenu}
             >
               About
-            </NavLink>
+            </ScrollLink>
             
-            <NavLink 
+            <ScrollLink 
               to="/services" 
-              className={({ isActive }) => 
-                `block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 
-                ${isActive ? 'text-secondary after:w-full' : `${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0`} 
-                after:transition-all after:duration-300 hover:after:w-full`
-              }
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 cursor-pointer
+                ${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0
+                after:transition-all after:duration-300 hover:after:w-full`}
               onClick={closeMenu}
             >
               Services
-            </NavLink>
+            </ScrollLink>
             
-            <NavLink 
+            <ScrollLink 
               to="/projects" 
-              className={({ isActive }) => 
-                `block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 
-                ${isActive ? 'text-secondary after:w-full' : `${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0`} 
-                after:transition-all after:duration-300 hover:after:w-full`
-              }
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`block py-3 md:py-0 md:px-4 font-medium relative after:absolute after:h-0.5 after:bg-secondary after:bottom-0 after:left-0 cursor-pointer
+                ${isScrolled || isMenuOpen ? 'text-primary' : 'text-white'} hover:text-secondary after:w-0
+                after:transition-all after:duration-300 hover:after:w-full`}
               onClick={closeMenu}
             >
               Projects
-            </NavLink>
+            </ScrollLink>
             
             
           
@@ -271,13 +280,17 @@ useEffect(() => {
               */}
             
             
-            <NavLink 
+            <ScrollLink 
               to="/contact" 
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
               className="md:ml-4 block px-6 py-2 bg-secondary text-white font-medium rounded-lg transition-all hover:bg-secondary-dark hover:shadow-md transform hover:-translate-y-0.5 mt-4 md:mt-0 text-center"
               onClick={closeMenu}
             >
               Contact Us
-            </NavLink>
+            </ScrollLink>
           </nav>
         </div>
       </div>

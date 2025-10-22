@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import { Facebook, Twitter, Linkedin, Instagram, CheckCircle, ArrowRight } from 'lucide-react';
 import logo from '../assets/logo1_upscayl_6x_realesrgan-x4plus.png';
 

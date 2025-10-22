@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, CheckCircle, Clock, MapPin, Phone, Mail, CalendarClock } from 'lucide-react';
+import { ArrowDown, CheckCircle, Clock, MapPin, Phone, Mail, CalendarClock, ArrowRight } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
 import ProjectCard from '../components/ProjectCard';
 import StatCounter from '../components/StatCounter';
@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
       <section className="py-20" id="about">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">Who We Are <br></br></span>
+            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">Who We Are</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-secondary">
               About Teso Works & Supply Ltd
             </h2>
@@ -81,6 +81,7 @@ const HomePage: React.FC = () => {
             </div>
             
             <div className="animate-on-scroll">
+              <h3 className="text-2xl font-bold text-primary mb-4">Building Excellence Since 2013</h3>
               <p className="text-gray-700 mb-6">
                 Teso Works & Supply Ltd is a premier construction company dedicated to providing exceptional quality in construction, consultancy, and supply of building materials across Zambia. Founded in 2013, we have built our reputation on delivering innovative and sustainable solutions for all your building needs.
               </p>
@@ -88,6 +89,28 @@ const HomePage: React.FC = () => {
               <p className="text-gray-700 mb-8">
                 Our team of highly skilled professionals brings expertise and passion to every project, ensuring that we not only meet but exceed client expectations. We believe in combining traditional craftsmanship with modern techniques to create structures that stand the test of time.
               </p>
+              
+              <div className="mb-8">
+                <h4 className="text-xl font-semibold mb-4 text-primary">Why Choose Teso Works?</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="text-gray-700"><strong>15+ Years of Experience:</strong> Proven track record in delivering quality construction projects across Zambia</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="text-gray-700"><strong>Comprehensive Services:</strong> From design to completion, we handle every aspect of your construction needs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="text-gray-700"><strong>Quality Materials:</strong> We source only the finest building materials from trusted suppliers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="text-gray-700"><strong>Professional Team:</strong> Skilled craftsmen, engineers, and project managers dedicated to excellence</span>
+                  </li>
+                </ul>
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="flex items-start">
@@ -110,6 +133,16 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="mt-8">
+                <Link 
+                  to="/about" 
+                  className="inline-flex items-center px-6 py-3 bg-secondary text-white font-medium rounded-md transition-all hover:bg-secondary-dark hover:shadow-lg transform hover:-translate-y-0.5"
+                >
+                  Learn More About Us
+                  <ArrowRight size={16} className="ml-2" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -119,7 +152,7 @@ const HomePage: React.FC = () => {
       <section className="py-20 bg-gray-50" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">What We Offer <br></br></span>
+            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">What We Offer</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-secondary">
               Our Services
             </h2>
@@ -130,37 +163,89 @@ const HomePage: React.FC = () => {
               title="Construction" 
               icon="construction"
               description="We provide premium residential and commercial construction using modern techniques and reliable project management to deliver timely results."
+              details={[
+                "Residential construction and custom homes",
+                "Commercial buildings and office complexes",
+                "Industrial facilities and warehouses",
+                "Infrastructure development projects",
+                "Site preparation and foundation work"
+              ]}
             />
             
             <ServiceCard 
               title="Consultancy" 
               icon="consultancy"
               description="Our expert consultancy service supports your project planning, architectural design, and management to ensure successful completion."
+              details={[
+                "Project feasibility studies and planning",
+                "Construction management consulting",
+                "Cost estimation and budgeting",
+                "Quality assurance and control",
+                "Regulatory compliance guidance"
+              ]}
             />
             
             <ServiceCard 
               title="Material Supply" 
               icon="material"
               description="We supply top-grade building materials and equipment, sourced from trusted partners, to meet your construction needs."
+              details={[
+                "Cement, steel, and concrete materials",
+                "Roofing and insulation materials",
+                "Electrical and plumbing supplies",
+                "Construction tools and equipment",
+                "Bulk material delivery services"
+              ]}
             />
             
             <ServiceCard 
               title="Renovation & Repairs" 
               icon="renovation"
               description="We offer professional renovation and repair services to restore and enhance your existing buildings with modern touches."
+              details={[
+                "Home renovations and extensions",
+                "Commercial space refurbishment",
+                "Structural repairs and reinforcement",
+                "Interior and exterior upgrades",
+                "Emergency repair services"
+              ]}
             />
             
             <ServiceCard 
               title="Architectural Design" 
               icon="design"
               description="Our architectural team creates innovative, functional designs that balance aesthetics with practical considerations."
+              details={[
+                "Custom architectural design services",
+                "3D modeling and visualization",
+                "Building permits and approvals",
+                "Sustainable design solutions",
+                "Interior design and space planning"
+              ]}
             />
             
             <ServiceCard 
               title="Project Management" 
               icon="management"
               description="We provide comprehensive project management services to ensure your construction project stays on time and within budget."
+              details={[
+                "End-to-end project coordination",
+                "Timeline and milestone management",
+                "Budget control and cost management",
+                "Quality control and inspections",
+                "Stakeholder communication and reporting"
+              ]}
             />
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link 
+              to="/services" 
+              className="inline-flex items-center px-8 py-3 bg-primary text-white font-medium rounded-md transition-all hover:bg-primary-dark hover:shadow-lg transform hover:-translate-y-0.5"
+            >
+              View All Services
+              <ArrowRight size={16} className="ml-2" />
+            </Link>
           </div>
         </div>
       </section>
@@ -169,7 +254,7 @@ const HomePage: React.FC = () => {
       <section className="py-20" id="projects">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">Our Portfolio <br></br></span>
+            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">Our Portfolio</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-secondary">
               Featured Projects
             </h2>
@@ -253,7 +338,7 @@ const HomePage: React.FC = () => {
       <section className="py-20" id="contact">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">Get in Touch <br></br></span>
+            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">Get in Touch</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-secondary">
               Contact Us
             </h2>
