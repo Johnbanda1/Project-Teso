@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowDown, CheckCircle, Clock, MapPin, Phone, Mail, CalendarClock } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
 import ProjectCard from '../components/ProjectCard';
-import TestimonialSlider from '../components/TestimonialSlider';
 import StatCounter from '../components/StatCounter';
 
 const HomePage: React.FC = () => {
@@ -228,20 +227,6 @@ const HomePage: React.FC = () => {
               image="https://images.pexels.com/photos/2505693/pexels-photo-2505693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             />
           </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50" id="testimonials">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-secondary uppercase font-semibold text-sm tracking-wider">Client Feedback <br></br></span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-secondary">
-              What Our Clients Say
-            </h2>
-          </div>
-          
-          <TestimonialSlider />
         </div>
       </section>
 

@@ -9,6 +9,9 @@ import ContactPage from './pages/ContactPage';
 import SustainabilityPage from './pages/commitment/SustainabilityPage';
 import SafetyPage from './pages/commitment/SafetyPage';
 import QualityPage from './pages/commitment/QualityPage';
+import FAQPage from './pages/FAQPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 import ScrollToTop from './components/ScrollToTop';
 import './styles/globals.css';
 
@@ -23,6 +26,9 @@ const App: React.FC = () => {
           <Route path="services" element={<ServicesPage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="faq" element={<FAQPage />} />
+          <Route path="terms" element={<TermsPage />} />
+          <Route path="privacy" element={<PrivacyPage />} />
           <Route path="commitment">
             <Route path="sustainability" element={<SustainabilityPage />} />
             <Route path="safety" element={<SafetyPage />} />

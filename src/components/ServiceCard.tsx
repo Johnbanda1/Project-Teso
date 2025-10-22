@@ -76,7 +76,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, det
       </AnimatePresence>
 
       <Link 
-        to="/services" 
+        to={`/services#${title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
         className="text-secondary font-semibold inline-block relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-secondary after:scale-x-0 after:origin-right after:transition-transform group-hover:after:scale-x-100 group-hover:after:origin-left"
       >
         View Service Details
